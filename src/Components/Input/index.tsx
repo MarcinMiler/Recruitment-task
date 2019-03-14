@@ -8,6 +8,7 @@ interface Props {
     inputProps: object
 }
 interface Suggestion {
+    id: number
     name: string
 }
 
@@ -17,12 +18,15 @@ export const Input: React.FC<Props> = ({
     onSuggestionClick
 }) => (
     <Container>
-        <StyledInput {...inputProps} />
+        <StyledInput data-testid="input" {...inputProps} />
 
         {sugesstions.length > 0 && (
             <SuggestionWrapper>
                 {sugesstions.map(suggestion => (
-                    <Suggestion onClick={() => onSuggestionClick(suggestion)}>
+                    <Suggestion
+                        key={suggestion.id}
+                        onClick={() => onSuggestionClick(suggestion)}
+                    >
                         {suggestion.name}
                     </Suggestion>
                 ))}

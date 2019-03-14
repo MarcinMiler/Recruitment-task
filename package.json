@@ -37,6 +37,7 @@
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^4.1.12",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "^8.0.5",
+    "react-testing-library": "^6.0.0"
   }
 }

@@ -6,10 +6,10 @@ import { action } from '@storybook/addon-actions'
 import { Input } from './'
 
 const suggestions = [
-    { name: 'Poland' },
-    { name: 'Germany' },
-    { name: 'Spain' },
-    { name: 'France' }
+    { id: 1, name: 'Poland' },
+    { id: 2, name: 'Germany' },
+    { id: 3, name: 'Spain' },
+    { id: 4, name: 'France' }
 ]
 
 const Wrapper = styled.div`
