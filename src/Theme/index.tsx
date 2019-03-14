@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600');
     
     body {
         width: 100%;

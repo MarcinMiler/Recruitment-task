@@ -4,12 +4,13 @@ import { ThemeProvider } from 'styled-components'
 
 import * as serviceWorker from './serviceWorker'
 import { theme, GlobalStyle } from './Theme'
+import { AppPage } from './Pages/App'
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
         <>
             <GlobalStyle />
-            <div>content</div>
+            <AppPage />
         </>
     </ThemeProvider>,
     document.getElementById('root')
