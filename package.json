@@ -10,6 +10,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
+    "styled-components": "^4.1.3",
     "typescript": "3.3.3333"
   },
   "scripts": {
@@ -34,6 +35,7 @@
     "@storybook/addon-links": "^5.0.1",
     "@storybook/react": "^5.0.1",
     "@types/storybook__react": "^4.0.1",
+    "@types/styled-components": "^4.1.12",
     "babel-loader": "^8.0.5"
   }
 }
