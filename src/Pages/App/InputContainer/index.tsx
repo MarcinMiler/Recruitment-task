@@ -25,7 +25,9 @@ export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
     const getInputProps = () => ({
         onChange: ({ target: { value } }: any) => {
             setValue(value)
-            const filter = suggestions.filter(x => x.name.includes(value))
+            const filter = suggestions.filter(x =>
+                x.name.toLowerCase().includes(value.toLowerCase())
+            )
             setSuggestion(filter)
         },
         onBlur: () => setSuggestion([]),
