@@ -12,7 +12,6 @@ storiesOf('City', module)
     .add('single closed', () => (
         <Wrapper>
             <City
-                i={1}
                 isOpen={false}
                 handleClick={() => null}
                 cityName="Warsaw"
@@ -23,7 +22,6 @@ storiesOf('City', module)
     .add('single open', () => (
         <Wrapper>
             <City
-                i={1}
                 isOpen={true}
                 handleClick={() => null}
                 cityName="Warsaw"
@@ -35,7 +33,6 @@ storiesOf('City', module)
         <Wrapper>
             {[1, 2, 3, 4, 5].map(i => (
                 <City
-                    i={i}
                     isOpen={false}
                     handleClick={() => null}
                     cityName="Warsaw"
@@ -48,7 +45,6 @@ storiesOf('City', module)
         <Wrapper>
             {[1, 2, 3, 4, 5].map(i => (
                 <City
-                    i={i}
                     isOpen={true}
                     handleClick={() => null}
                     cityName="Warsaw"

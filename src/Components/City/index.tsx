@@ -3,21 +3,19 @@ import * as React from 'react'
 import { Container, Main, Text, ArrowIcon, Description } from './style'
 
 interface Props {
-    i: number
     isOpen: boolean
     cityName: string
     description: string
-    handleClick: (i: number) => void
+    handleClick: () => void
 }
 
 export const City: React.FC<Props> = ({
-    i,
     isOpen,
     cityName,
     description,
     handleClick
 }) => (
-    <Container onClick={() => handleClick(i)} pose={isOpen ? 'open' : 'closed'}>
+    <Container onClick={handleClick} pose={isOpen ? 'open' : 'closed'}>
         <Main>
             <Text>{cityName}</Text>
 

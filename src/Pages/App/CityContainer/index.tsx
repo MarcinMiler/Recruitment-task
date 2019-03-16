@@ -3,23 +3,16 @@ import * as React from 'react'
 import { City } from '../../../Components'
 
 interface Props {
-    i: number
-    isOpen: boolean
     cityName: string
-    handleClick: (i: number) => void
 }
 
-export const CityContainer: React.FC<Props> = ({
-    i,
-    isOpen,
-    cityName,
-    handleClick
-}) => {
+export const CityContainer: React.FC<Props> = ({ cityName }) => {
     const [description, setDescription] = React.useState('')
+    const [isOpen, setIsOpen] = React.useState(false)
 
     React.useEffect(() => {
         fetch(
-            `https://pl.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&origin=*&titles=${cityName}`
+            `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&origin=*&titles=${cityName}`
         )
             .then(res => res.json())
             .then(res => {
@@ -27,14 +20,16 @@ export const CityContainer: React.FC<Props> = ({
 
                 setDescription(res.query.pages[pageId[0]].extract)
             })
+        return () => {
+            if (isOpen === true) setIsOpen(false)
+        }
     }, [cityName])
 
     return (
         <City
-            i={i}
             isOpen={isOpen}
             cityName={cityName}
-            handleClick={handleClick}
+            handleClick={() => setIsOpen(isOpen ? false : true)}
             description={description}
         />
     )

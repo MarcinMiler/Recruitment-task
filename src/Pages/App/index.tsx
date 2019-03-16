@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { InputContainer } from './InputContainer'
-import { CitiesContainer } from './CitiesContainer'
+import { CitiesList } from './CitiesContainer'
 import { Container, Title, Wrapper } from './style'
 
 export const AppPage: React.FC = () => {
@@ -25,11 +25,10 @@ export const AppPage: React.FC = () => {
     return (
         <Container>
             <Wrapper>
-                <Title>Top polluted cities in countriesss</Title>
+                <Title>The most polluted cities</Title>
 
                 <InputContainer fetchCities={fetchCities} />
-                {loading && <p>loading</p>}
-                {cities.length > 0 && <CitiesContainer cities={cities} />}
+                {loading ? <p>loading</p> : <CitiesList cities={cities} />}
             </Wrapper>
         </Container>
     )

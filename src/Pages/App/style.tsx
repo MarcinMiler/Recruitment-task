@@ -10,12 +10,13 @@ export const Container = styled.div`
 `
 export const Wrapper = styled.div`
     width: 1200px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 `
 export const Title = styled.h1`
-    margin-top: 20px;
+    margin: 50px 0 70px 0;
+    text-align: center;
     font-weight: 300;
-    font-size: 64px;
+    font-size: 68px;
 `

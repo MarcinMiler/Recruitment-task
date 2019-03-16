@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 100%;
     height: 80px;
+    margin-bottom: 50px;
     position: relative;
 `
 export const StyledInput = styled.input`

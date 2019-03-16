@@ -12,7 +12,7 @@ interface Suggestion {
     code: string
 }
 
-const suggestions = [
+const suggestions: Suggestion[] = [
     { id: 1, name: 'Poland', code: 'PL' },
     { id: 2, name: 'Germany', code: 'DE' },
     { id: 3, name: 'Spain', code: 'ES' },
@@ -31,14 +31,18 @@ export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
             )
             setSuggestion(filter)
         },
-        value
+        value,
+        placeholder: 'Type a country...'
     })
 
-    const onSuggestionClick = (suggestion: Suggestion) => {
-        fetchCities(suggestion)
-        setValue(suggestion.name)
-        setSuggestion([])
-    }
+    const onSuggestionClick = React.useCallback(
+        (suggestion: Suggestion) => {
+            fetchCities(suggestion)
+            setValue(suggestion.name)
+            setSuggestion([])
+        },
+        [suggestion]
+    )
 
     return (
         <Input
