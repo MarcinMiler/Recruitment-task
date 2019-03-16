@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { useAccordion } from '../../../Hooks'
-import { City } from '../../../Components'
+import { CityContainer } from '../CityContainer'
 
 interface Props {
     cities: any[]
@@ -13,13 +13,12 @@ export const CitiesContainer: React.FC<Props> = ({ cities }) => {
     return (
         <>
             {cities.map((city, i) => (
-                <City
+                <CityContainer
                     key={i}
                     i={i}
                     isOpen={openIndexes.includes(i)}
                     handleClick={handleClick}
                     cityName={city.city}
-                    description=""
                 />
             ))}
         </>
