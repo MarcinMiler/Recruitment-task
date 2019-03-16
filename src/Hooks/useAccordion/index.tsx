@@ -11,5 +11,5 @@ export const useAccordion = () => {
             : setOpenIndexes([...openIndexes, index])
     }
 
-    return React.useMemo(() => ({ openIndexes, handleClick }), [openIndexes])
+    return { openIndexes, handleClick }
 }

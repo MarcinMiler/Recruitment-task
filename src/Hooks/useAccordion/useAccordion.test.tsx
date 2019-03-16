@@ -31,4 +31,15 @@ describe('useAccordion', () => {
 
         expect(result.current.openIndexes).toEqual([1])
     })
+
+    it('should open multiple indexes', () => {
+        const { result } = renderHook(() => useAccordion())
+
+        // open and close
+        act(() => result.current.handleClick(1))
+        act(() => result.current.handleClick(2))
+        act(() => result.current.handleClick(3))
+
+        expect(result.current.openIndexes).toEqual([1, 2, 3])
+    })
 })

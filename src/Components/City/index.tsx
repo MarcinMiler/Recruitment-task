@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Container, Name, Description } from './style'
+import { Container, Main, Text, ArrowIcon, Description } from './style'
 
 interface Props {
     i: number
@@ -16,15 +16,14 @@ export const City: React.FC<Props> = ({
     cityName,
     description,
     handleClick
-}) => {
-    return (
-        <Container
-            onClick={() => handleClick(i)}
-            pose={isOpen ? 'open' : 'closed'}
-        >
-            <Name>{cityName}</Name>
+}) => (
+    <Container onClick={() => handleClick(i)} pose={isOpen ? 'open' : 'closed'}>
+        <Main>
+            <Text>{cityName}</Text>
 
-            <Description>{description}</Description>
-        </Container>
-    )
-}
+            <ArrowIcon rotate180={isOpen ? 1 : 0} />
+        </Main>
+
+        <Description>{description}</Description>
+    </Container>
+)

@@ -9,13 +9,14 @@ interface Props {
 interface Suggestion {
     id: number
     name: string
+    code: string
 }
 
 const suggestions = [
-    { id: 1, name: 'Poland' },
-    { id: 2, name: 'Germany' },
-    { id: 3, name: 'Spain' },
-    { id: 4, name: 'France' }
+    { id: 1, name: 'Poland', code: 'PL' },
+    { id: 2, name: 'Germany', code: 'DE' },
+    { id: 3, name: 'Spain', code: 'ES' },
+    { id: 4, name: 'France', code: 'FR' }
 ]
 
 export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
@@ -30,15 +31,20 @@ export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
             )
             setSuggestion(filter)
         },
-        onBlur: () => setSuggestion([]),
         value
     })
+
+    const onSuggestionClick = (suggestion: Suggestion) => {
+        fetchCities(suggestion)
+        setValue(suggestion.name)
+        setSuggestion([])
+    }
 
     return (
         <Input
             sugesstions={suggestion}
             inputProps={getInputProps()}
-            onSuggestionClick={suggestion => fetchCities(suggestion)}
+            onSuggestionClick={onSuggestionClick}
         />
     )
 }

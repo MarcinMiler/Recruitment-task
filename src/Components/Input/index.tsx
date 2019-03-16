@@ -4,12 +4,14 @@ import { Container, StyledInput, SuggestionWrapper, Suggestion } from './style'
 
 interface Props {
     sugesstions: Suggestion[]
-    onSuggestionClick: (suggestion: Suggestion) => void
     inputProps: object
+    onSuggestionClick: (suggestion: Suggestion) => void
 }
+
 interface Suggestion {
     id: number
     name: string
+    code: string
 }
 
 export const Input: React.FC<Props> = ({

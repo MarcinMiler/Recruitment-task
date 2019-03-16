@@ -26,6 +26,7 @@ export const SuggestionWrapper = styled.div`
     left: 0;
     background-color: white;
     box-shadow: 0px 0px 45px #a8a8a8;
+    z-index: 100;
 `
 export const Suggestion = styled.div`
     width: 100%;

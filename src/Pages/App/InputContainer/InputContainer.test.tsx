@@ -47,7 +47,7 @@ describe('Input Container', () => {
         expect(() => getByText('Holand')).toThrowError()
     })
 
-    it('should call fetch cities on suggestion click', () => {
+    it('should call fetch cities on suggestion click and clear suggestions', () => {
         const fetchCities = jest.fn()
         const { input, getByText } = setup(fetchCities)
 
@@ -59,6 +59,12 @@ describe('Input Container', () => {
         // @ts-ignore
         expect(input.value).toBe('France')
         expect(fetchCities).toHaveBeenCalledTimes(1)
-        expect(fetchCities).toBeCalledWith({ id: 4, name: 'France' })
+        expect(fetchCities).toBeCalledWith({
+            id: 4,
+            name: 'France',
+            code: 'FR'
+        })
+
+        expect(() => getByText('France')).toThrowError()
     })
 })
