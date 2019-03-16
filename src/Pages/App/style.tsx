@@ -20,3 +20,10 @@ export const Title = styled.h1`
     font-weight: 300;
     font-size: 68px;
 `
+export const LoadingWrapper = styled.div`
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

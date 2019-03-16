@@ -2,7 +2,8 @@ import * as React from 'react'
 
 import { InputContainer } from './InputContainer'
 import { CitiesList } from './CitiesContainer'
-import { Container, Title, Wrapper } from './style'
+import { Container, Title, Wrapper, LoadingWrapper } from './style'
+import { Spinner } from '../../Components/Spinner'
 
 export const AppPage: React.FC = () => {
     const [cities, setCities] = React.useState([])
@@ -28,7 +29,13 @@ export const AppPage: React.FC = () => {
                 <Title>The most polluted cities</Title>
 
                 <InputContainer fetchCities={fetchCities} />
-                {loading ? <p>loading</p> : <CitiesList cities={cities} />}
+                {loading ? (
+                    <LoadingWrapper>
+                        <Spinner size={100} color="black" />
+                    </LoadingWrapper>
+                ) : (
+                    <CitiesList cities={cities} />
+                )}
             </Wrapper>
         </Container>
     )
