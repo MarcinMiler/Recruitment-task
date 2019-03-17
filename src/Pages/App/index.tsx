@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { InputContainer } from './InputContainer'
-import { CitiesList } from './CitiesContainer'
 import { Spinner } from '../../Components'
+import { InputContainer } from './InputContainer'
+import { CitiesList } from './CitiesList'
 import { Container, Title, Wrapper, LoadingWrapper } from './style'
 
 export const AppPage: React.FC = () => {
@@ -29,6 +29,7 @@ export const AppPage: React.FC = () => {
                 <Title>The most polluted cities</Title>
 
                 <InputContainer fetchCities={fetchCities} />
+
                 {loading ? (
                     <LoadingWrapper>
                         <Spinner size={100} color="black" />
