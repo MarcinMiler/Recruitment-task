@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Input } from '../../../Components'
+import { useLocalStorage } from '../../../Hooks'
 
 interface Props {
     fetchCities: (suggestion: Suggestion) => void
@@ -20,7 +21,7 @@ const suggestions: Suggestion[] = [
 ]
 
 export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
-    const [value, setValue] = React.useState('')
+    const { value, setValue } = useLocalStorage('input')
     const [suggestion, setSuggestion] = React.useState<Suggestion[]>([])
 
     const getInputProps = () => ({
@@ -31,6 +32,12 @@ export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
             )
             setSuggestion(filter)
         },
+        onFocus: () =>
+            setSuggestion(
+                suggestions.filter(x =>
+                    x.name.toLowerCase().includes(value.toLowerCase())
+                )
+            ),
         value,
         placeholder: 'Type a country...'
     })

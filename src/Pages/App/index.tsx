@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { InputContainer } from './InputContainer'
 import { CitiesList } from './CitiesContainer'
+import { Spinner } from '../../Components'
 import { Container, Title, Wrapper, LoadingWrapper } from './style'
-import { Spinner } from '../../Components/Spinner'
 
 export const AppPage: React.FC = () => {
     const [cities, setCities] = React.useState([])
