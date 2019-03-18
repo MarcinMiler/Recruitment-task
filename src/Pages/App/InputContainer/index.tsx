@@ -24,20 +24,18 @@ export const InputContainer: React.FC<Props> = ({ fetchCities }) => {
     const { value, setValue } = useLocalStorage('input')
     const [suggestion, setSuggestion] = React.useState<Suggestion[]>([])
 
+    const filterSuggestions = (value: string) =>
+        suggestions.filter(x =>
+            x.name.toLowerCase().includes(value.toLowerCase())
+        )
+
     const getInputProps = () => ({
         onChange: ({ target: { value } }: any) => {
             setValue(value)
-            const filter = suggestions.filter(x =>
-                x.name.toLowerCase().includes(value.toLowerCase())
-            )
-            setSuggestion(filter)
+
+            setSuggestion(filterSuggestions(value))
         },
-        onFocus: () =>
-            setSuggestion(
-                suggestions.filter(x =>
-                    x.name.toLowerCase().includes(value.toLowerCase())
-                )
-            ),
+        onFocus: () => setSuggestion(filterSuggestions(value)),
         value,
         placeholder: 'Type a country...'
     })

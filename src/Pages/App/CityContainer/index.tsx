@@ -25,11 +25,13 @@ export const CityContainer: React.FC<Props> = ({ cityName }) => {
         }
     }, [cityName])
 
+    const handleClick = () => setIsOpen(isOpen ? false : true)
+
     return (
         <City
             isOpen={isOpen}
             cityName={cityName}
-            handleClick={() => setIsOpen(isOpen ? false : true)}
+            handleClick={handleClick}
             description={description}
         />
     )

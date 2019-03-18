@@ -3,10 +3,6 @@ import posed from 'react-pose'
 
 import { FiChevronDown } from 'react-icons/fi'
 
-interface Props {
-    isOpen: boolean
-}
-
 interface ArrowProps {
     rotate180: number
 }

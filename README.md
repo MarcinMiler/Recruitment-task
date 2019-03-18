@@ -5,6 +5,14 @@
 
 Link to live site: [https://marcinmiler-test.netlify.com/](https://marcinmiler-test.netlify.com/)
 
+Link to storybook: [https://marcinmiler-test-storybook.netlify.com](https://marcinmiler-test-storybook.netlify.com)
+
+## Description
+
+Technology stack: React (0 class components, 100% function components with hooks), Typescript, storybook, jest, react-testing-library, react-hooks-testing-library
+
+I have a problem with openaq api, the https://api.openaq.org/v1/measurements endpoint is working only with country,limit parameters, when I specify order,sort,parameter query (https://api.openaq.org/v1/measurements?country=PL&parameter=pm25&order_by=value&limit=10&sort=desc) the api dont respond, I use https://api.openaq.org/v1/cities endpoint instead.
+
 ## Run local
 
 ### web:
